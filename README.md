@@ -13,8 +13,8 @@
 ## contentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|string|
-|image|string|
+|text|string|null: false|
+|image|string|null: false|
 |went|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
