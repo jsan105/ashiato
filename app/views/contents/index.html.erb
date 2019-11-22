@@ -2,10 +2,14 @@
   <div class="wrapper">
     <div class="side">
       <%# ユーザー情報 %>
-      <div class="user-box">田中さんのマイページ </div>
-        <div class="user-box__name"></div>
-        <div class="user-box__action"></div>
-
+      <div class="user-box">
+        <div class="user-box__name">田中さんのマイページ
+        </div>
+        <div class="user-box__action">
+          <div class="user-box__action__post">投稿</div>
+          <div class="user-box__action__logouto">ログアウト</div>
+        </div>
+      </div>
       <%# 履歴一覧 %>
       <div class="list">行ったとこ
         <div class="list__visited">都道府県</div>
@@ -16,18 +20,23 @@
       <div class="upper-content">
         <div class="map">
           <%# 仮投稿機能 %>
-          <div class="contents row"> 
-            <div class="container">
-              <%= form_tag('/tweets', method: :post) do %>
-                <h3>
-                  投稿する
-                </h3>
-                <input placeholder="Image Url" type="text" name="image">
-                <textarea cols="30" name="text" placeholder="text" rows="10"></textarea>
-                <input type="submit" value="SENT">
+          <div class="form">
+            <div class="content">
+              <%= form_for @content do |f| %>
+                <%= f.text_field :visited, class: 'content__visited', placeholder: '県名を入力してください' %>
+                <%= f.text_area :text, class: 'content__text', placeholder: '思い出を書き残そう！！' %>
+                <%= f.label :image, class: 'content__image' do %>
+                  <%= f.file_field :image, class: 'file' %>
+                <% end %>
+                <%= f.submit '投稿', class: 'content__submit' %>
               <% end %>
             </div>
-          </div>
+
+        </div>
+      </div>
+    </div> 
+
+
 
         </div>
       </div>
@@ -49,5 +58,6 @@
   </div>
   
 </body>
+
 
 
