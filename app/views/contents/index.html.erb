@@ -1,7 +1,12 @@
 <body>
   <div class="wrapper">
     <div class="side">
-      <div class="box">田中さんのマイページ </div>
+      <%# ユーザー情報 %>
+      <div class="user-box">田中さんのマイページ </div>
+        <div class="user-box__name"></div>
+        <div class="user-box__action"></div>
+
+      <%# 履歴一覧 %>
       <div class="list">行ったとこ
         <div class="list__visited">都道府県</div>
       </div>
@@ -10,9 +15,23 @@
     <div class="main">
       <div class="upper-content">
         <div class="map">
-      </div>
-      </div>
+          <%# 仮投稿機能 %>
+          <div class="contents row"> 
+            <div class="container">
+              <%= form_tag('/tweets', method: :post) do %>
+                <h3>
+                  投稿する
+                </h3>
+                <input placeholder="Image Url" type="text" name="image">
+                <textarea cols="30" name="text" placeholder="text" rows="10"></textarea>
+                <input type="submit" value="SENT">
+              <% end %>
+            </div>
+          </div>
 
+        </div>
+      </div>
+    
       <div class="under-content">
         <div class="contents">
         <div class="content">
@@ -26,7 +45,7 @@
   </div>
 
   <div class=footer>
-    <address>えっ！？ まだ知らないの！！ これするだけで年収300万→→年収1000万になるのに.....</address>
+    <address>えっ！？ まだ知らないの！！ これするだけで年収300万→→→年収1000万になるのに.....</address>
   </div>
   
 </body>
