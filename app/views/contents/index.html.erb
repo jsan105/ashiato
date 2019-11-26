@@ -7,7 +7,9 @@
         </div>
         <div class="user-box__action">
           <div class="user-box__action__post">投稿</div>
-          <div class="user-box__action__logouto">ログアウト</div>
+          <div class="user-box__action__logout">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </div>
         </div>
       </div>
       <%# 履歴一覧 %>
@@ -17,47 +19,61 @@
     </div>
     
     <div class="main">
+
       <div class="upper-content">
         <div class="map">
-          <%# 仮投稿機能 %>
-          <div class="form">
-            <div class="content">
-              <%= form_for @content do |f| %>
-                <%= f.text_field :visited, class: 'content__visited', placeholder: '県名を入力してください' %>
-                <%= f.text_area :text, class: 'content__text', placeholder: '思い出を書き残そう！！' %>
-                <%= f.label :image, class: 'content__image' do %>
-                  <%= f.file_field :image, class: 'file' %>
-                <% end %>
-                <%= f.submit '投稿', class: 'content__submit' %>
-              <% end %>
+          <%# 仮投稿機能 %><!--Creates the popup body-->
+          <div class="popup-overlay">
+            <!--Creates the popup content-->
+            <%# ポップアップ記述 %>
+            <div class="popup-content">
+              <div class="form">
+                <div class="content">
+                  <%= form_for @content do |f| %>
+                    <%= f.text_field :visited, class: 'content-visited', placeholder: '県名を入力してください' %>
+                    <%= f.text_area :text, class: 'content-text', placeholder: '思い出を書き残そう！！' %>
+                    <%= f.label :image, class: 'content-image' do %>
+                      <%= f.file_field :image, class: 'file' %>
+                    <% end %>
+                    <%= f.submit '投稿', class: 'content-submit' %>
+                  <% end %>
+                </div>
+              </div>
+              
+              <!--popup's close button-->
+              <button class="close">Close</button>    </div>
             </div>
+          <!--Content shown when popup is not displayed-->
+         
 
+
+          
         </div>
       </div>
-    </div> 
 
-
-
-        </div>
-      </div>
-    
       <div class="under-content">
         <div class="contents">
-        <div class="content">
-          <div class="content__visited"></div>
-          <div class="content__image"></div>
-          <div class="content__text"></div>
+          <% @contents.each do |content| %>
+            <div class="show-content">
+              <div class="content__visited">
+                <%= content.visited %>
+              </div>
+              <div class="content__image">
+                <%= image_tag content.image.url%>
+              </div>  
+              <div class="content__text" >
+                <%= content.text %>
+              </div>       
+            </div>
+          <% end %>
         </div>
-      </div>
       </div>
     </div>
   </div>
 
   <div class=footer>
-    <address>えっ！？ まだ知らないの！！ これするだけで年収300万→→→年収1000万になるのに.....</address>
+      <%= link_to  "えっ！？ まだ知らないの！！ これするだけで年収300万→→→年収1000万になるのに....", href="https://www.google.com/webhp?hl=ja&amp;sa=X&amp;ved=0ahUKEwjlw_OMtP3lAhUaPXAKHQnsDWQQPAgH" %>
+    
   </div>
-  
 </body>
-
-
 

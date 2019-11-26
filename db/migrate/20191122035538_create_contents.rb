@@ -3,7 +3,7 @@ class CreateContents < ActiveRecord::Migration[5.2]
     create_table :contents do |t|
       t.string :text,         null: false
       t.string :image,        null: false
-      t.string :visited,  null: false
+      t.string :visited,      null: false
       t.references :user,     foreign_key: true
       t.timestamps
     end
