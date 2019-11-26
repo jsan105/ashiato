@@ -24,8 +24,9 @@ $(function() {   //html読みこんでから下の記述実行 必ず記述す�
                     ${content.text}
                   </div>
                 </div> `
-                console.log(html)
-    $(".contents").prepend(html);
+    $(".contents").prepend(html); //show-contentの親contentsクラス
+    // .prepend 一番前に非同期追加
+    // .append 最後に非同期追加
   }
 
   $('#new_content').on(`submit`, function(e){
@@ -43,10 +44,10 @@ $(function() {   //html読みこんでから下の記述実行 必ず記述す�
     })
 
     .done(function(content){
-      buildMessage(content)
-         //show-contentの親contentsクラス
+      buildMessage(content) //関数呼び出し
       $('form')[0].reset(); //入力内容が消える
       $('.content-submit').prop('disabled' , false); //ボタンクラスと同じクラス名を使用
+      $('.contents').animate({scrollLeft: 0 }, {duration: 4000});
       return false;
     })
     .fail(function(){
@@ -54,6 +55,3 @@ $(function() {   //html読みこんでから下の記述実行 必ず記述す�
     });
   });
 })
-  
-
-      //$('.contents').animate({scrolltop: $('.contents')[0].scrollleft}, 'fast');   
