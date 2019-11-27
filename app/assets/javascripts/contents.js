@@ -1,5 +1,6 @@
 $(function() {   //html読みこんでから下の記述実行 必ず記述する
 
+
   // 投稿機能ポップアップ表示（完了）
   $(".user-box__action__post").on("click", function(){
 
@@ -9,7 +10,9 @@ $(function() {   //html読みこんでから下の記述実行 必ず記述す�
   $(".close").on("click", function(){
      $(".popup-overlay, .popup-content").removeClass("active");
   });
-  
+
+
+
   // 非同期通信
   function buildMessage(content){
     var html = `<div class="show-content">
@@ -47,11 +50,29 @@ $(function() {   //html読みこんでから下の記述実行 必ず記述す�
       buildMessage(content) //関数呼び出し
       $('form')[0].reset(); //入力内容が消える
       $('.content-submit').prop('disabled' , false); //ボタンクラスと同じクラス名を使用
-      $('.contents').animate({scrollLeft: 0 }, {duration: 4000});
+      $('.contents').animate({scrollLeft: 0 }, {duration: 4000}); //横スクロール、４秒かけて左端へスクロール
       return false;
     })
     .fail(function(){
       alert('メッセージ送信に失敗しました');
     });
   });
-})
+
+  //うざい広告
+  $(window).on('load', function() {
+    var posY = 0;
+    setInterval(function(){
+      if (posY <= -900) {
+          posX = 0;
+      }
+      // 1回の移動距離
+      posY -= 1;
+      $('.footer').css({position: posY + 'px'});
+    }, 100);
+  });
+  
+  
+
+
+});
+
