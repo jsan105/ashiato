@@ -4,6 +4,8 @@
   margin: 0;
   padding: 0;
   display: flex;
+  height: calc(100vh);
+  width: calc(100vw);
   .side{
     width: 200px;
     height: calc(100vh);
@@ -51,8 +53,7 @@
       background-color: lightcyan;
       height: 450px;
       .map{
-        height: 200px;
-        width: 500px;
+        
 
         .popup-overlay{
           /*Hides pop-up when there is no "active" class*/
