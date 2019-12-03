@@ -71,6 +71,7 @@ $(function() {   //html読みこんでから下の記述実行 必ず記述す�
       onSelect : function(data){  
           alert(data.name);
       }
+
     });
 
   // 非同期通信
@@ -94,7 +95,7 @@ $(function() {   //html読みこんでから下の記述実行 必ず記述す�
 
   function changeColor (content, areas) {
     var prefecture = areas.find(content.visited); //配列内の県名照合 indexof:要素有1 要素無-1 
-    return (areas.name == content.visited);
+    // return (areas.name == content.visited);
 
                        //find 検索した関数を取得する
     
@@ -102,8 +103,8 @@ $(function() {   //html読みこんでから下の記述実行 必ず記述す�
       'color':'#FF0000', //グレーから赤へ
     });
   }
-  console.log(prefecture)    
-  }
+  // console.log(prefecture)    
+  
 
   $('#new_content').on(`submit`, function(e){
     e.preventDefault()
@@ -129,43 +130,14 @@ $(function() {   //html読みこんでから下の記述実行 必ず記述す�
       
       return false;
     })
+
     .fail(function(){
       alert('メッセージ送信に失敗しました');
     });
-  });
+
+  })
+})
 
 
 
-
-
-
-
-  //うざい広告
-  // ポップアップ表示
-  $(".footer).on("click", function(){
-    $(".popup-overlay, .popup-content").addClass("active");
-
-  });
-  // ポップアップ閉じる
-  $(".close, .popup-overlay").on("click", function(){
-    $(".popup-overlay, .popup-content").removeClass("active");
-  });
-  
-
-  $(window).on('load', function() {
-    var posY = 0;
-    setInterval(function(){
-      if (posY <= -900) {
-          posX = 0;
-      }
-      // 1回の移動距離
-      posY -= 1;
-      $('.footer').css({position: posY + 'px'});
-    }, 100);
-  });
-  
-  
-
-
-});
 

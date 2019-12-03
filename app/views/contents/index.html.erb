@@ -3,7 +3,8 @@
     <div class="side">
       <%# ユーザー情報 %>
       <div class="user-box">
-        <div class="user-box__name">田中さんのマイページ
+        <div class="user-box__name">
+          <%# <% @conetnt.user.id %> %>
         </div>
         <div class="user-box__action">
           <div class="user-box__action__post">投稿</div>
@@ -22,40 +23,16 @@
       <div class="upper-content">
         <div class="map">
           <div id="map-container"></div>
-
-
-
-          <%# 仮投稿機能 %><!--Creates the popup body-->
-          <div class="popup-overlay">
-            <%# ポップアップ記述 open %>
-            <div class="popup-content">
-              <div class="form">
-                <div class="content">
-                  <%= form_for @content do |f| %>
-                    <%= f.select :visited, 
-                      [["北海道"],["青森"],["岩手"],["宮城"],["秋田"],
-                      ["山形"],["福島"],["茨城"],["栃木"],["群馬"],
-                      ["埼玉"],["千葉"],["東京"],["神奈川"],["新潟"],
-                      ["富山"],["石川"],["福井"],["山梨"],["長野"],
-                      ["岐阜"],["静岡"],["愛知"],["三重"],["滋賀"],
-                      ["京都"],["大阪"],["兵庫"],["奈良"],["和歌山"],
-                      ["鳥取"],["島根"],["岡山"],["広島"],["山口"],
-                      ["徳島"],["香川"],["愛媛"],["高知"],["福岡"],
-                      ["佐賀"],["長崎"],["熊本"],["大分"],["宮崎"],
-                      ["鹿児島"],["沖縄"]], include_blank: "都道府県 選択" %>
-                    <%= f.text_area :text, class: 'content-text', placeholder: '思い出を書き残そう！！' %>
-                    <%= f.label :image, class: 'content-image' do %>
-                      <%= f.file_field :image, class: 'file' %>
-                    <% end %>
-                    <%= f.submit '投稿', class: 'content-submit' %>
-                  <% end %>
-                </div>
-              </div>
-              <%# ポップアップ記述 close %>
-            <button class="close">Close</button></div>
-          </div>
+          <%# 投稿機能をrenderする %>
+          <%= render partial: "form" %>  
         </div>
+        <%# 最新投稿を表示 %>
+         <div class="new--content">最新投稿を表示したかった
+         </div>
+         
+      
       </div>
+
 
       <div class="under-content">
         <div class="contents">
@@ -74,12 +51,29 @@
           <% end %>
         </div>
       </div>
+
+      <%# 広告バナー %>
+        <div class="popup-overlay-banner">
+          <%# ポップアップ記述 open %>
+          <div class="popup-content-banner">
+            登録完了まで
+            <div class="popup-overlay-banner__touroku">
+             <%# ポップアップ記述 open %>
+              <div class="popup-content-banner__touroku">
+                登録完了まで  
+
+
+
     </div>
   </div>
 
-  <div class=footer>
-      <%= link_to  "えっ！？ まだ知らないの！！ これするだけで年収300万→→→年収1000万になるのに....", href="https://www.google.com/webhp?hl=ja&amp;sa=X&amp;ved=0ahUKEwjlw_OMtP3lAhUaPXAKHQnsDWQQPAgH" %>
-    
-  </div>
+  
+      <div class=footer>
+        "えっ！？ まだ知らないの！！ これするだけで年収300万→→→年収1000万になるのに...."
+      
+      </div>
+
+    <%# ポップアップ記述 close %>
+        <%# <button class="close-banner">Close</button></div> %>
 </body>
 

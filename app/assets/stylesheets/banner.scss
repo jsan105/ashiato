@@ -1,0 +1,62 @@
+.popup-overlay-banner{
+  /*Hides pop-up when there is no "active" class*/
+  visibility:hidden;
+  position:absolute;
+  background:rgba(0, 0, 0, 0.5);
+  width:100%;     //画面全体覆う
+  height:100%;   //画面全体覆う
+  z-index: 1;    //浮かせる
+  position: fixed; //固定する
+  top: 0;
+  left: 0;
+
+}
+.ppopup-overlay-banner{
+  /*displays pop-up when "active" class is present*/
+  visibility:visible;
+  text-align:center;
+}
+
+.popup-content-banner {
+  /*Hides pop-up content when there is no "active" class */
+ visibility:hidden;
+ background-color: lightcyan;
+ position: absolute;
+ width: 50%;
+ height: 50%;
+ top: 25%;
+ left: 25%;
+}
+
+.popup-content-banner.active {
+  /*Shows pop-up content when "active" class is present */
+  visibility:visible;
+  
+}
+
+button{
+  display:inline-block;
+  vertical-align:middle;
+  border-radius:30px;
+  margin:.20rem;
+  font-size: 1rem;
+  color:#666666;
+  background:	#ffffff;
+  border:1px solid #666666;  
+}
+
+button:hover{
+  border:1px solid #666666;
+  background:#666666;
+  color:#ffffff;
+}
+
+.footer{
+  width: calc(100vw);
+  height: 50px;
+  background-color: black;
+  text-align: center;
+  line-height: 50px;
+  position: relative;
+  color: yellowgreen;
+}

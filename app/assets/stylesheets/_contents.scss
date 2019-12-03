@@ -10,26 +10,40 @@
     width: 200px;
     height: calc(100vh);
     .user-box{
-      background-color: lightslategray;
+      background-color: tomato;
       height: 80px;
       &__name{
         height: 20px;
         width: 200px;
         text-align: center;
+        margin-bottom: 10px;
+
       }
 
       &__action{
-        height: 20px;
-        width: 150px;
+        height: 30px;
+        width: 300px;
         display: flex;
         &__post{
-          height: 20px;
-          width: 150px;
+          height: 30px;
+          width: 50px;
           cursor: pointer;
+          font-size: 20px;
+          border: solid 1px black;
+          margin-right: 30px;
+          margin-left: 5px;
+          text-align: center;     
         }
         &__logout{
-          height: 20px;
-          width: 200px;
+          height: 30px;
+          width: 100px;
+          font-size: 20px;
+          border: solid 1px black;
+          cursor: pointer;
+          a{
+            text-decoration: none;
+            color: black;
+          }
         }
       }
     }
@@ -52,63 +66,16 @@
     .upper-content{
       background-color: lightcyan;
       height: 450px;
-      .map{
-        
+      display: flex;
 
-        .popup-overlay{
-          /*Hides pop-up when there is no "active" class*/
-          visibility:hidden;
-          position:absolute;
-          background:rgba(0, 0, 0, 0.5);
-          width:100%;     //画面全体覆う
-          height:100%;   //画面全体覆う
-          z-index: 1;    //浮かせる
-          position: fixed; //固定する
-          top: 0;
-          left: 0;
-
-        }
-        .popup-overlay.active{
-          /*displays pop-up when "active" class is present*/
-          visibility:visible;
-          text-align:center;
-        }
-        
-        .popup-content {
-          /*Hides pop-up content when there is no "active" class */
-         visibility:hidden;
-         background-color: royalblue;
-         position: absolute;
-         width: 50%;
-         height: 50%;
-         top: 25%;
-         left: 25%;
-        }
-        
-        .popup-content.active {
-          /*Shows pop-up content when "active" class is present */
-          visibility:visible;
-        }
-        
-        button{
-          display:inline-block;
-          vertical-align:middle;
-          border-radius:30px;
-          margin:.20rem;
-          font-size: 1rem;
-          color:#666666;
-          background:	#ffffff;
-          border:1px solid #666666;  
-        }
-        
-        button:hover{
-          border:1px solid #666666;
-          background:#666666;
-          color:#ffffff;
-        }
-
-        
+      .new--content{
+        background-color: tomato;
+        height: 100%;
+        width: 100%;
       }
+      
+
+      
     }
 
     .under-content{
@@ -151,23 +118,4 @@
       }
     }
   }
-}
-
-.footer{
-  width: calc(100vw);
-  height: 50px;
-  background-color: black;
-  text-align: center;
-  line-height: 50px;
-  position: relative;
-  a{
-    color: yellowgreen;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    
-    display: inline-block;
-
-  }
-  
 }
