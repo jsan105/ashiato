@@ -1,7 +1,7 @@
 class ContentsController < ApplicationController
 
   def index
-    @contents = Content.all.order("created_at DESC")  #content全て表示する
+    @contents = current_user.contents.order("created_at DESC")  #content全て表示する
     @content = Content.new  #form forのため@contentの中身を無くす
   end
   
@@ -13,7 +13,7 @@ class ContentsController < ApplicationController
 
     if @content.save
       respond_to do |format|
-        format.html 
+        format.html
         format.json
       end
 
@@ -23,11 +23,12 @@ class ContentsController < ApplicationController
   end
 
   def show
+    @content = Content.find(params[:id])
   end
 
   private
     def content_params
-      params.require(:content).permit(:visited, :image, :text).merge(user_id: current_user.id)
+      params.require(:content).permit(:title, :prefectues, :image, :text).merge(user_id: current_user.id)
     end
 
 

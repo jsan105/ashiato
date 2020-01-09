@@ -1,79 +1,32 @@
 <body>
   <div class="wrapper">
-    <div class="side">
-      <%# ユーザー情報 %>
-      <div class="user-box">
-        <div class="user-box__name">
-          <%# <% @conetnt.user.id %> %>
-        </div>
-        <div class="user-box__action">
-          <div class="user-box__action__post">投稿</div>
-          <div class="user-box__action__logout">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          </div>
-        </div>
-      </div>
-      <%# 履歴一覧 %>
-      <div class="list">行ったとこ
-        <div class="list__visited">都道府県</div>
-      </div>
-    </div>
-    
+    <%= render  partial: "sidebar" %> 
     <div class="main">
       <div class="upper-content">
-        <div class="map">
-          <div id="map-container"></div>
-          <%# 投稿機能をrenderする %>
-          <%= render partial: "form" %>  
+        
+        <div class="content--comments">コメント機能表示
         </div>
-        <%# 最新投稿を表示 %>
-         <div class="new--content">最新投稿を表示したかった
-         </div>
-         
-      
       </div>
+
 
 
       <div class="under-content">
         <div class="contents">
           <% @contents.each do |content| %>
-            <div class="show-content">
-              <div class="content__visited">
-                <%= content.visited %>
+            <%=link_to content_path(content.id),class:"show-content" do%>
+              <div class="show-content">
+                <div class="content__title" >
+                  <%= content.title %>
+                </div>
+                <div class="content__image">
+                  <%= image_tag content.image.url, size:"298x187"%>
+                </div>
               </div>
-              <div class="content__image">
-                <%= image_tag content.image.url%>
-              </div>
-              <div class="content__text" >
-                <%= content.text %>
-              </div>
-            </div>
+            <% end %>
           <% end %>
         </div>
       </div>
-
-      <%# 広告バナー %>
-        <div class="popup-overlay-banner">
-          <%# ポップアップ記述 open %>
-          <div class="popup-content-banner">
-            登録完了まで
-            <div class="popup-overlay-banner__touroku">
-             <%# ポップアップ記述 open %>
-              <div class="popup-content-banner__touroku">
-                登録完了まで  
-
-
-
     </div>
   </div>
-
-  
-      <div class=footer>
-        "えっ！？ まだ知らないの！！ これするだけで年収300万→→→年収1000万になるのに...."
-      
-      </div>
-
-    <%# ポップアップ記述 close %>
-        <%# <button class="close-banner">Close</button></div> %>
 </body>
 

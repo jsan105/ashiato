@@ -13,9 +13,10 @@
 ActiveRecord::Schema.define(version: 2019_11_22_035538) do
 
   create_table "contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
     t.string "text", null: false
     t.string "image", null: false
-    t.string "visited", null: false
+    t.string "prefectues", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,0 +1,21 @@
+<div class="side">
+  <%# ユーザー情報 %>
+  <div class="user-box">
+    <div class="user-box__name">
+      <span><%= current_user.name %>
+    </div>
+    <div class="user-box__action">
+      <div class="user-box__action__post">投稿
+        <%= render partial: "form" %> 
+      </div>
+      <div class="user-box__action__logout">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </div>
+    </div>
+  </div>
+  <%# 履歴一覧 %>
+  <div class="list">
+    <%= current_user.name %>さんの投稿
+      <div class="list__visited">タイトル</div>
+  </div>
+</div>

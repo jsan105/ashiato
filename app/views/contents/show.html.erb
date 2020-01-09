@@ -1,0 +1,29 @@
+
+  <div class="wrapper">
+
+    <%= render partial: "sidebar" %> 
+    
+    <div class="main">
+      
+      <div class="new--content"> 
+          <div class="show--title">
+            <%= @content.title %> 
+          </div>
+
+          <div class="show--prefectues">
+            <%= @content.prefectues %>
+          </div>
+
+          <div class="show--user_name">
+            <%= current_user.name%>
+          </div>
+
+          <div class="show--image">
+            <%= image_tag @content.image.url, size:"298x187"%>
+          </div> 
+
+          <div class="show--text">
+            <%= @content.text%>
+          </div>
+        </div>
+      </div>
