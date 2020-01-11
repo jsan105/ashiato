@@ -79,17 +79,6 @@
   }
 }
 
-// .show-user_name{
-//   width: 100%;
-//   height: 40px;
-//   float: right;
-//   line-height: 40px;
-//   font-size: 20px;
-//   text-align: right;
-// }
-
-
-
 .show-editbox{
   display: flex;
   height: 100px;
@@ -117,7 +106,13 @@
 
 .show-toppage{
   a{
-    color: #A51E44;
+    color:#e70606;
     text-decoration: none;
   }
+
+  a:hover{
+    color: rgb(204, 151, 166);
+
+  }
+
 }

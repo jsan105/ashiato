@@ -31,12 +31,8 @@
         <div class="show-right">
         
           <div class="show-text">
-            <%= @content.text%>
+            <%= simple_format (@content.text)%>
           </div>
-
-          <%# <div class="show-user_name">
-            <%= current_user.name%>
-          <%# </div>  %>
 
           <%# 編集関連 %>
 

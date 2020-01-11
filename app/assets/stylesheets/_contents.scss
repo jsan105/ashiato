@@ -71,11 +71,20 @@
     .list{
       background-color: #F9FFF3;
       height: calc(100vh);
-      &__visited{
+      overflow: scroll;
+      &__title{
         background-color: yellowgreen;
-        margin: 20px;
+        margin: 10px;
         width: 200px;
         height: 30px;
+
+        white-space:nowrap;
+        overflow:hidden;
+        visibility:hidden;
+      }
+      text {
+        
+        color: red;
       }
     }
   }
@@ -118,6 +127,7 @@
 
         .show-content{
           margin-left: 10px;
+          margin-right: 10px;
           height: 240px;
           width: 300px;
           background-color: salmon;

@@ -6,7 +6,7 @@ $(function() {   //html読みこんでから下の記述実行 必ず記述す�
   });
 
 
-  $(".close .popup-overlay").on("click", function(){
+  $(".close, .popup-overlay").on("click", function(){
     $(".popup-overlay, .popup-content").removeClass("active");
   });
 
