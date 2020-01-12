@@ -1,0 +1,49 @@
+.destroy-main{
+  height: 100%;
+  width: 100%;
+  padding: 20px 12rem 10px;
+  background-image: image-url('bg.png');
+
+}
+
+.destroy-box{
+  height: 350px;
+  width: 600px;
+  margin: auto;
+  margin-top: 100px;
+  background-color: papayawhip;
+  position: relative;
+  border-radius: 5%;
+}
+  
+
+.destroy-text{
+  position: absolute;
+  top: 30px;
+  left: 130px;
+  width: 400px;
+  height: 50px;
+  font-size: 36px;
+}
+
+.destroy-toppage{
+  // top: 70px;
+  // left: 150px;
+  position: absolute;
+    top: 150px;
+    left: 225px;
+  margin-top: 30px;
+  display: block;
+  a {
+    color:#e70606;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    
+  }
+
+  a:hover{
+    color: rgb(204, 151, 166);
+  }
+
+}

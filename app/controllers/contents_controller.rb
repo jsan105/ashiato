@@ -27,6 +27,19 @@ class ContentsController < ApplicationController
   end
 
 
+  def edit
+    @content = Content.find(params[:id])
+  end
+
+  def update
+  end
+
+  
+  def destroy
+    content = Content.find(params[:id])
+    content.destroy
+  end
+
 
 
   private

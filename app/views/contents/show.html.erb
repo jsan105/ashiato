@@ -6,7 +6,6 @@
     <div class="show__main">
       <div class="show__content">
         <div class="show-left">
-
           <div class="show-left__top">
             <div class="show-created">
               <%= @content.created_at.strftime("%Y年%m月%d日") %>
@@ -15,21 +14,16 @@
               行先：<%= @content.prefectues %>
             </div>
           </div>
-          
           <div class="show-title">
-          
             <%= @content.title %> 
           </div>
-
           <div class="show-image">
             <%= image_tag @content.image.url, size:"460x294"%>
           </div> 
-
         </div>
 
 
         <div class="show-right">
-        
           <div class="show-text">
             <%= simple_format (@content.text)%>
           </div>
@@ -37,34 +31,16 @@
           <%# 編集関連 %>
 
           <div class="show-editbox">
-
-            <div class="show-edit">編集する
-              <%# <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %> 
+            <div class="show-edit">
+              <%= link_to '編集する', edit_content_path(@content.id), method: :get %>
             </div>
-
-            <div class="show-delete">削除する
-              <%# <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete  %>
+            <div class="show-delete">  
+              <%= link_to '削除する', content_path(@content.id), method: :delete %>
             </div>
-
           </div>
-
           <div class="show-toppage">
             <%= link_to 'トップページに戻る', "/" %>
           </div>
-
-
-
         </div>
-
-
-        
-
-        
-
-        
-
-        
-
-        
       </div>
     </div>

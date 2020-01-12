@@ -81,12 +81,6 @@ $(function() {   //html読みこんでから下の記述実行 必ず記述す�
                   <div class="content__title" >
                     ${content.title}
                   </div>
-                  <div class="content__name" >
-                    ${content.user_name}
-                  </div>
-                  <div class="content__prefectues">
-                    ${content.prefectues}
-                  </div>
                   <div class="content__image" >
                     <img src=${content.image}>
                   </div>

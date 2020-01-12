@@ -131,21 +131,16 @@
           height: 240px;
           width: 300px;
           background-color: salmon;
-          &__visited{
-            margin-top: 5px;
-            height: 30px;
-            color: red;
-          }
           &__image{
             margin-top: 5px;
             height: 30px;
             color: red;
             display: none;
           }
-          &__text{
+          .content__title{
             margin-top: 5px;
             height: 30px;
-            color: red;
+            overflow: hidden;
           }
         }
       }
