@@ -32,6 +32,8 @@ class ContentsController < ApplicationController
   end
 
   def update
+    content = Content.find(params[:id])
+    content.update(content_params)
   end
 
   
