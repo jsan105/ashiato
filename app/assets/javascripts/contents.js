@@ -110,9 +110,9 @@ $(function() {   //html読みこんでから下の記述実行 必ず記述す�
       $('.content-submit').prop('disabled' , false); //ボタン復活__ボタンクラスと同じクラス名を使用
       $('.contents').animate({scrollLeft: 0 }, {duration: 4000}); //横スクロール、４秒かけて左端へスクロール
 
-      changeColor(content)
+      // changeColor(content)
       
-      return false;
+      // return false;
     })
 
     .fail(function(){

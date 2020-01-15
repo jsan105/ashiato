@@ -16,8 +16,7 @@
   <%# 履歴一覧 %>
   <div class="lists">
     <%= current_user.name %>さんの投稿
-    <div class="list
-    ">
+    <div class="list">
       <%= current_user.contents.each do |content| %>
         <%=link_to content_path(content.id) do%>
           <div class="list__title">
